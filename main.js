@@ -1,5 +1,7 @@
-/*----- constants -----*/
-
+// Defining the constants 
+// X_Class is the x's
+//Circle_class is circles
+//Winning combinations is all the combinations
 const X_CLASS = 'x'
 const CIRCLE_CLASS = 'circle'
 const WINNING_COMBINATIONS = [
@@ -13,6 +15,7 @@ const WINNING_COMBINATIONS = [
 	[2, 4, 6]
 
 ]
+
 const cellElements = document.querySelectorAll('[data-cell]')
 const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
@@ -24,42 +27,13 @@ startGame()
 
 restartButton.addEventListener('click', startGame)
 
-
-
-
-
-
-/*----- app's state (variables) -----*/
-
-
-
-
-
-
-
-
-
-/*----- cached element references -----*/
-
-
-
-
-
-
-
-
-
-/*----- event listeners -----*/
-
-
-
-
-
-
-
-
-/*----- functions -----*/
-
+// the functions that will make the game actually run
+//Startgame is going to start the game and call the hover class while also clearing the board from the previous game
+//handleClick will place either and X or O in each cell depending on who's turn it is, this also calls the swapTurn and setBoardHoverClass
+//endGame will determine if the game is a draw or if X wins or if O wins through an if else loop and will display a winningMessage for whoever wins
+//swapTurns will obviously swapTurns
+//setBoardHoverClass is going to show the X or O for whoevers turn it is to show what cell the cursor is in
+//checkWin will check to see if there is a winner against the rules of winningCombinations
 function startGame() {
 	circleTurn = false
 	cellElements.forEach( cell => {
@@ -86,11 +60,6 @@ function handleClick(e) {
 	setBoardHoverClass()
 	}
 }
-
-
-	
-	// check for draw
-	// switch turns
 	
 function endGame(draw) {
 	if (draw) {
